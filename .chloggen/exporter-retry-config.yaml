@@ -1,0 +1,23 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: exporter/exporterhelper
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+note: Add configurable retry policy options for exporters including initial interval, max interval, and max elapsed time
+
+# One or more tracking issues related to the change
+issues: [9823]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Exporters can now configure fine-grained retry behavior through the `retry_on_failure`
+  configuration block. New fields include:
+  - `initial_interval`: The initial interval between retries (default: 5s)
+  - `randomization_factor`: The randomization factor for retry intervals (default: 0.5)
+  - `multiplier`: The multiplier for retry intervals (default: 1.5)
+  - `max_interval`: The maximum interval between retries (default: 30s)
+  - `max_elapsed_time`: The maximum total time for retries (default: 300s)
