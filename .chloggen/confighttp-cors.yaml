@@ -1,0 +1,20 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, receiver/otlp
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("text") if it needs to start with a backtick (`)
+description: Add CORS support to HTTP server configuration, allowing users to configure allowed origins, headers, and max age for cross-origin requests.
+
+# One or more tracking issues related to the change
+issues: [9673]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  Users can now configure CORS settings in the HTTP server configuration:
+  - `cors.allowed_origins`: List of allowed origins (supports wildcards)
+  - `cors.allowed_headers`: List of allowed request headers
+  - `cors.max_age`: Maximum age (in seconds) for preflight request cache
