@@ -1,0 +1,22 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, exporter/otlp, ...
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (``).
+short_description: Add support for per-request authentication headers in HTTP client configuration
+
+# One or more tracking issues related to the change
+issues: [9887]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+note: |
+  The confighttp package now supports configuring per-request authentication
+  headers via the existing auth extension interface. This allows HTTP clients
+  to inject authentication credentials (e.g., Bearer tokens, API keys) into
+  outgoing requests using the standard authenticator extension mechanism.
+  This change is backward compatible; existing configurations without auth
+  settings will continue to work unchanged.
