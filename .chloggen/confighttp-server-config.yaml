@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("<text>") if it needs to start with a backtick (`)
+description: Add `ServerConfig` to consolidate server-side HTTP configuration options including TLS, CORS, compression, and auth settings.
+
+# One or more tracking issues related to the change
+issues: [9368]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  `ServerConfig` groups together all server-side HTTP configuration fields previously
+  scattered across individual receiver configurations, providing a consistent and
+  reusable structure for HTTP server setup.
